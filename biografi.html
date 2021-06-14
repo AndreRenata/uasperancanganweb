@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <title>Biografi</title>
+    <style>
+      .progress{
+        top:50%;
+        left: 20%;
+        right: 20%;
+        z-index: 999;
+      }
+      .layer{
+        background-color: rgba(0,0,0,1);
+        position: fixed;
+        left: 0%;
+        top: 0%;
+        right: 0%;
+        bottom: 0%;
+        z-index: 998;
+      }
+    </style>
+</head>
+<body class="">
+    <div class="layer">
+      <div class="progress position-absolute">
+        <div id="progress" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">25%</div>
+      </div>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Profil</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="d-flex" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="biografi.html">Biografi</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Navigasi -->
+      <div class="container">
+        <h1 align="center">Biografi</h1>
+        <div class="card pt-5 pb-5 pl-3 pr-3" style="background-image: url(bg-paper.jpg);background-position: top;">
+          <div class="row">
+            <div class="col">
+              <div class="card pl-5 pr-5 pt-3 pb-3" align="center">
+                Saya lahir pada 19 Juni 2001 di kabupaten Tabanan. Saya sudah tinggal di tabanan sejak lahir namun saat beranjak kelas 4 SD saya berpindah tempat tinggal di Denpasar. Jadi setelah itu saya melanjutkan pendidikan di Denpasar, namun sempat kembali tinggal di Tabanan saat SMA karena suatu alasan.
+              </div>
+            </div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+          <div class="row">
+            <div class="col"></div>
+            <div class="col"></div>
+            <div class="col">
+              <div class="card pl-5 pr-5 pt-3 pb-3" align="center">
+                Hobi saya bermain futsal. Saya menempuh pendidikan di SMPN 4 Denpasar, lalu melanjutkan jenjang SMA di SMAN 1 Tabanan. Jadi selama masa sekolah saya sering mengikuti kegiatan futsal yang mewakili sekolah dan beberapa kali berhasil mendapatkan gelar juara.
+            </div>
+          </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <div class="card pl-5 pr-5 pt-3 pb-3" align="center">
+                Ayah saya berasal dari Abiansemal Badung, sedangkan Ibu saya berasal dari Tabanan. Masing masing dari mereka bekerja sebagai pegawai swasta dan juga wiraswasta.
+            </div>
+          </div>
+            <div class="col"></div>
+            <div class="col"></div>
+          </div>
+        </div>
+      </div>
+      
+</body>
+</html>
+<script>
+  var progres = $("#progress");
+  var i=0;
+  var intrvl=setInterval(function(){
+    if(i<=100){
+      progres.width(i+'%');
+      progres.html(i+'%');
+    }
+    if(i==150){
+      $(".layer").remove();
+      clearInterval(intrvl);
+    }
+    i++;
+  }, 20);
+</script>
